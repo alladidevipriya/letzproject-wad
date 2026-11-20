@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemeMint - CreatorCrate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h2> Meme<span>Mint</span></h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#templates">Templates</a>
+        <a href="#editor">Meme Editor</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Create. Laugh. Share.</h1>
+    <p>Turn your everyday situations into amazing memes!</p>
+    <button onclick="goToTemplates()">Explore Templates →</button>
+</section>
+
+<section id="templates">
+    <h1> Explore Meme Templates</h1>
+    <p>Select your favourite situation and start creating!</p>
+
+    <div class="filters">
+        <button onclick="filterTemplates('All')">All</button>
+        <button onclick="filterTemplates('Student')">Student Life</button>
+        <button onclick="filterTemplates('Funny')">Funny</button>
+        <button onclick="filterTemplates('Animals')">Animals</button>
+        <button onclick="filterTemplates('Work')">Work & Tech</button>
+    </div>
+
+    <div class="template-container" id="templateContainer"></div>
+</section>
+
+<section id="editor">
+    <h1> Meme Creator Studio</h1>
+
+    <div class="editor">
+
+        <div class="preview">
+            <canvas id="memeCanvas" width="800" height="800"></canvas>
+        </div>
+
+        <div class="controls">
+
+            <h2>Customize Your Meme</h2>
+
+            <label>Top Text</label>
+            <input type="text" id="topText"
+                value="WHEN EXAMS ARE TOMORROW">
+
+            <label>Bottom Text</label>
+            <input type="text" id="bottomText"
+                value="AND YOU START STUDYING TODAY">
+
+            <label>Font Style</label>
+            <select id="fontStyle">
+                <option value="Impact">Impact</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Georgia">Georgia</option>
+            </select>
+
+            <label>Text Colour</label>
+            <input type="color" id="textColor" value="#ffffff">
+
+            <label>Text Size</label>
+            <input type="range" id="textSize"
+                min="25" max="75" value="45">
+
+            <label>Upload Your Image</label>
+            <input type="file" id="uploadImage" accept="image/*">
+
+            <button onclick="drawMeme()">Update Meme</button>
+            <button onclick="downloadMeme()">⬇ Download Meme</button>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h2> MemeMint</h2>
+    <p>Made with creativity for CreatorCrate Hackathon.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
